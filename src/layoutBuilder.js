@@ -548,6 +548,7 @@ LayoutBuilder.prototype.buildNextLine = function(textNode) {
 	}
 
 	line.lastLineInParagraph = textNode._inlines.length === 0;
+  line.innerCharacterSpace = textNode.innerCharacterSpace;
 
 	return line;
 };

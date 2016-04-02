@@ -280,6 +280,9 @@ function renderLine(line, x, y, pdfKitDoc) {
 
 		pdfKitDoc.addContent('' + (x + inline.x) + ' ' + (pdfKitDoc.page.height - y - ascenderHeight) + ' Td');
 		pdfKitDoc.addContent('/' + encoded.fontId + ' ' + inline.fontSize + ' Tf');
+    if (line.innerCharacterSpace) {
+      pdfKitDoc.addContent('' + line.innerCharacterSpace + ' Tc');
+    }
 
         pdfKitDoc.addContent('<' + encoded.encodedText + '> Tj');
 
