@@ -76,7 +76,10 @@ module.exports = function(grunt) {
 		},
 
 		browserify: {
-			build: {
+			dist: {
+				files: {
+      		'build/pdfmake.js': ['src/*.js']
+    		},				
 				options: {
 					require: ['./src/browser-extensions/virtual-fs.js:fs', './src/browser-extensions/pdfMake.js:pdfMake'],
 					browserifyOptions: {
@@ -116,9 +119,9 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-mocha-cov');
-	grunt.loadNpmTasks('grunt-jsdoc');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
+	// grunt.loadNpmTasks('grunt-mocha-cov');
+	// grunt.loadNpmTasks('grunt-jsdoc');
+	// grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
