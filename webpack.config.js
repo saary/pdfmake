@@ -6,7 +6,9 @@ module.exports = {
   entry: './src/browser-extensions/pdfMake.js',
   output: {
     path: path.join(__dirname, './build'),
-    filename: 'pdfmake.js'
+    filename: 'pdfmake.js',
+    library: 'pdfMake',
+    libraryTarget: 'this'
   },
   resolve: {
     alias: {
